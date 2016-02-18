@@ -8,13 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		DAC6F7DE1C723D030042934D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F7DD1C723D030042934D /* AppDelegate.swift */; };
-		DAC6F7E01C723D030042934D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F7DF1C723D030042934D /* ViewController.swift */; };
+		DAC6F7E01C723D030042934D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F7DF1C723D030042934D /* LoginViewController.swift */; };
 		DAC6F7E31C723D030042934D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC6F7E11C723D030042934D /* Main.storyboard */; };
 		DAC6F7E61C723D030042934D /* MyOnTheMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F7E41C723D030042934D /* MyOnTheMap.xcdatamodeld */; };
 		DAC6F7E81C723D030042934D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC6F7E71C723D030042934D /* Assets.xcassets */; };
 		DAC6F7EB1C723D030042934D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC6F7E91C723D030042934D /* LaunchScreen.storyboard */; };
 		DAC6F7F61C723D030042934D /* MyOnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F7F51C723D030042934D /* MyOnTheMapTests.swift */; };
 		DAC6F8011C723D030042934D /* MyOnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8001C723D030042934D /* MyOnTheMapUITests.swift */; };
+		DAC6F8111C723EF90042934D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAC6F80E1C723EF90042934D /* Roboto-Medium.ttf */; };
+		DAC6F8121C723EF90042934D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAC6F80F1C723EF90042934D /* Roboto-Regular.ttf */; };
+		DAC6F8131C723EF90042934D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAC6F8101C723EF90042934D /* Roboto-Thin.ttf */; };
+		DAC6F8181C7247530042934D /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8171C7247530042934D /* UdacityClient.swift */; };
+		DAC6F81A1C7248850042934D /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8191C7248840042934D /* UdacityConstants.swift */; };
+		DAC6F81C1C724E850042934D /* UdacityConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F81B1C724E850042934D /* UdacityConvenience.swift */; };
+		DAC6F8251C73C2510042934D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8241C73C2510042934D /* MapViewController.swift */; };
+		DAC6F8271C73C2990042934D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8261C73C2990042934D /* ListViewController.swift */; };
+		DAC6F8291C73D63C0042934D /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8281C73D63C0042934D /* StudentInformation.swift */; };
+		DAC6F82B1C74F2990042934D /* CustomNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F82A1C74F2990042934D /* CustomNavigationItem.swift */; };
+		DAC6F82D1C75327D0042934D /* InfoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */; };
+		DAC6F82F1C7621A70042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */; };
+		DAC6F8311C7621B60042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */; };
+		DAC6F8331C7621D60042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8321C7621D60042934D /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +51,7 @@
 /* Begin PBXFileReference section */
 		DAC6F7DA1C723D030042934D /* MyOnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC6F7DD1C723D030042934D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DAC6F7DF1C723D030042934D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DAC6F7DF1C723D030042934D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAC6F7E21C723D030042934D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAC6F7E51C723D030042934D /* MyOnTheMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyOnTheMap.xcdatamodel; sourceTree = "<group>"; };
 		DAC6F7E71C723D030042934D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +63,20 @@
 		DAC6F7FC1C723D030042934D /* MyOnTheMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyOnTheMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC6F8001C723D030042934D /* MyOnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOnTheMapUITests.swift; sourceTree = "<group>"; };
 		DAC6F8021C723D030042934D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC6F80E1C723EF90042934D /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		DAC6F80F1C723EF90042934D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		DAC6F8101C723EF90042934D /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		DAC6F8171C7247530042934D /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
+		DAC6F8191C7248840042934D /* UdacityConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
+		DAC6F81B1C724E850042934D /* UdacityConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConvenience.swift; sourceTree = "<group>"; };
+		DAC6F8241C73C2510042934D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DAC6F8261C73C2990042934D /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		DAC6F8281C73D63C0042934D /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
+		DAC6F82A1C74F2990042934D /* CustomNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationItem.swift; sourceTree = "<group>"; };
+		DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostViewController.swift; sourceTree = "<group>"; };
+		DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		DAC6F8321C7621D60042934D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC6F8331C7621D60042934D /* Bolts.framework in Frameworks */,
+				DAC6F8311C7621B60042934D /* FBSDKLoginKit.framework in Frameworks */,
+				DAC6F82F1C7621A70042934D /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +130,22 @@
 		DAC6F7DC1C723D030042934D /* MyOnTheMap */ = {
 			isa = PBXGroup;
 			children = (
-				DAC6F7DD1C723D030042934D /* AppDelegate.swift */,
-				DAC6F7DF1C723D030042934D /* ViewController.swift */,
+				DAC6F81D1C738FF80042934D /* Frameworks */,
+				DAC6F8141C7247080042934D /* Model */,
 				DAC6F7E11C723D030042934D /* Main.storyboard */,
+				DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */,
+				DAC6F7DD1C723D030042934D /* AppDelegate.swift */,
+				DAC6F7DF1C723D030042934D /* LoginViewController.swift */,
+				DAC6F82A1C74F2990042934D /* CustomNavigationItem.swift */,
+				DAC6F8241C73C2510042934D /* MapViewController.swift */,
+				DAC6F8261C73C2990042934D /* ListViewController.swift */,
 				DAC6F7E71C723D030042934D /* Assets.xcassets */,
 				DAC6F7E91C723D030042934D /* LaunchScreen.storyboard */,
 				DAC6F7EC1C723D030042934D /* Info.plist */,
 				DAC6F7E41C723D030042934D /* MyOnTheMap.xcdatamodeld */,
+				DAC6F80E1C723EF90042934D /* Roboto-Medium.ttf */,
+				DAC6F80F1C723EF90042934D /* Roboto-Regular.ttf */,
+				DAC6F8101C723EF90042934D /* Roboto-Thin.ttf */,
 			);
 			path = MyOnTheMap;
 			sourceTree = "<group>";
@@ -126,6 +166,43 @@
 				DAC6F8021C723D030042934D /* Info.plist */,
 			);
 			path = MyOnTheMapUITests;
+			sourceTree = "<group>";
+		};
+		DAC6F8141C7247080042934D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAC6F8151C7247120042934D /* Client */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DAC6F8151C7247120042934D /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				DAC6F8161C72471E0042934D /* Udacity */,
+			);
+			name = Client;
+			sourceTree = "<group>";
+		};
+		DAC6F8161C72471E0042934D /* Udacity */ = {
+			isa = PBXGroup;
+			children = (
+				DAC6F8171C7247530042934D /* UdacityClient.swift */,
+				DAC6F8281C73D63C0042934D /* StudentInformation.swift */,
+				DAC6F8191C7248840042934D /* UdacityConstants.swift */,
+				DAC6F81B1C724E850042934D /* UdacityConvenience.swift */,
+			);
+			name = Udacity;
+			sourceTree = "<group>";
+		};
+		DAC6F81D1C738FF80042934D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAC6F8321C7621D60042934D /* Bolts.framework */,
+				DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */,
+				DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +309,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC6F8111C723EF90042934D /* Roboto-Medium.ttf in Resources */,
 				DAC6F7EB1C723D030042934D /* LaunchScreen.storyboard in Resources */,
+				DAC6F8131C723EF90042934D /* Roboto-Thin.ttf in Resources */,
+				DAC6F8121C723EF90042934D /* Roboto-Regular.ttf in Resources */,
 				DAC6F7E81C723D030042934D /* Assets.xcassets in Resources */,
 				DAC6F7E31C723D030042934D /* Main.storyboard in Resources */,
 			);
@@ -259,9 +339,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC6F7E01C723D030042934D /* ViewController.swift in Sources */,
+				DAC6F8181C7247530042934D /* UdacityClient.swift in Sources */,
+				DAC6F81A1C7248850042934D /* UdacityConstants.swift in Sources */,
+				DAC6F7E01C723D030042934D /* LoginViewController.swift in Sources */,
 				DAC6F7DE1C723D030042934D /* AppDelegate.swift in Sources */,
 				DAC6F7E61C723D030042934D /* MyOnTheMap.xcdatamodeld in Sources */,
+				DAC6F81C1C724E850042934D /* UdacityConvenience.swift in Sources */,
+				DAC6F8291C73D63C0042934D /* StudentInformation.swift in Sources */,
+				DAC6F8271C73C2990042934D /* ListViewController.swift in Sources */,
+				DAC6F82D1C75327D0042934D /* InfoPostViewController.swift in Sources */,
+				DAC6F8251C73C2510042934D /* MapViewController.swift in Sources */,
+				DAC6F82B1C74F2990042934D /* CustomNavigationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/MyOnTheMap";
 				INFOPLIST_FILE = MyOnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MWaller.MyOnTheMap;
@@ -412,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/MyOnTheMap";
 				INFOPLIST_FILE = MyOnTheMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MWaller.MyOnTheMap;
@@ -486,6 +576,7 @@
 				DAC6F8071C723D030042934D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAC6F8081C723D030042934D /* Build configuration list for PBXNativeTarget "MyOnTheMapTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +585,7 @@
 				DAC6F80A1C723D030042934D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAC6F80B1C723D030042934D /* Build configuration list for PBXNativeTarget "MyOnTheMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +594,7 @@
 				DAC6F80D1C723D030042934D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
