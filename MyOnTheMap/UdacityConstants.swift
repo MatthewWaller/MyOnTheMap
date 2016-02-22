@@ -32,19 +32,7 @@ extension UdacityClient {
         static let Session = "session"
         static let User = "users/{user_id}"
         static let StudentLocation = "StudentLocation"
-        // MARK: Account
-        static let Account = "account"
-        static let AccountIDFavoriteMovies = "account/{id}/favorite/movies"
-        static let AccountIDFavorite = "account/{id}/favorite"
-        static let AccountIDWatchlistMovies = "account/{id}/watchlist/movies"
-        static let AccountIDWatchlist = "account/{id}/watchlist"
         
-        // MARK: Authentication
-        static let AuthenticationTokenNew = "authentication/token/new"
-        static let AuthenticationSessionNew = "authentication/session/new"
-        
-        // MARK: Search
-        static let SearchMovie = "search/movie"
         
         }
     
@@ -57,14 +45,8 @@ extension UdacityClient {
     
     // MARK: Parameter Keys
     struct ParameterKeys {
-        
-        static let ApiKey = "api_key"
-        static let SessionID = "session_id"
-        static let RequestToken = "request_token"
-        static let Query = "query"
+    
         static let Limit = "limit"
-        static let Skip = "skip"
-        static let Order = "order"
         
     }
     
@@ -73,28 +55,13 @@ extension UdacityClient {
         static let UdacityLogin = "udacity"
         static let FacebookLogin = "facebook_mobile"
         
-        static let MediaType = "media_type"
-        static let MediaID = "media_id"
-        static let Favorite = "favorite"
-        static let Watchlist = "watchlist"
-        
     }
     
     // MARK: JSON Response Keys
     struct JSONResponseKeys {
         
         // MARK: General
-        static let StatusMessage = "status_message"
-        static let StatusCode = "status_code"
         static let StudentInfoResults = "results"
-        
-        // MARK: Authorization
-        static let RequestToken = "request_token"
-        static let SessionID = "session"
-        
-        // MARK: Account
-        static let UserID = "id"
-        
         
         // MARK: StudentInformation
         static let ObjectID = "objectId"
@@ -105,7 +72,6 @@ extension UdacityClient {
         static let MediaURL = "mediaURL"
         static let Latitude = "latitude"
         static let Longitude = "longitude"
-    
         
     }
     

@@ -9,10 +9,9 @@
 import UIKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     var tapRecognizer: UITapGestureRecognizer? = nil
-    
     var keyboardAdjusted = false
     var lastKeyboardOffset : CGFloat = 0.0
     
@@ -22,15 +21,32 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribeToKeyboardNotifications()
+        
+        tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
+        tapRecognizer?.numberOfTapsRequired = 1
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        unsubscribeToKeyboardNotifications()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+       subscribeToKeyboardNotifications()
+        addKeyboardDismissRecognizer()
+        
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        unsubscribeToKeyboardNotifications()
+        removeKeyboardDismissRecognizer()
+
+    }
+    
+   
 
     
 
@@ -41,13 +57,13 @@ class LoginViewController: UIViewController {
         
         UdacityClient.sharedInstance().loginWithCredentials(usernamePasswordDictionary, type: UdacityClient.JSONBodyKeys.UdacityLogin) { (success, errorString) in
             if success {
-                print("LoggedIn!!!!")
                 
                 self.loginSuccess()
                 
-                
             } else {
+                
                 self.presentAlert(errorString!)
+            
             }
         }
     
@@ -81,14 +97,17 @@ class LoginViewController: UIViewController {
        let FBLoginManager = FBSDKLoginManager()
         FBLoginManager.logInWithReadPermissions(["public_profile"], fromViewController: self) { (result, error) -> Void in
             if let error = error {
-                print(error.localizedDescription)
+                
+               self.presentAlert(error.localizedDescription)
+                
             } else if result.isCancelled {
-                print("Cancelled")
+                
+                self.presentAlert("Cancelled")
+                
             } else {
                 let facebookCredentials = ["access_token": result.token.tokenString]
                 UdacityClient.sharedInstance().loginWithCredentials(facebookCredentials,  type: UdacityClient.JSONBodyKeys.FacebookLogin, completionHandler: { (success, errorString) -> Void in
                     if success {
-                        print("Logged in with Facebook!!!")
                        
                         self.loginSuccess()
                         
@@ -104,38 +123,33 @@ class LoginViewController: UIViewController {
     
     func loginSuccess(){
         
-        UdacityClient.sharedInstance().getStudentLocations { (result, error) -> Void in
-            if let results = result {
-                
-                self.appDelegate.allStudentInfo = results
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.performSegueWithIdentifier("showTabBarController", sender: self)
-                })
-                
-            } else {
-                print(error)
-            }
-        }
-
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.performSegueWithIdentifier("showTabBarController", sender: self)
+        })
         
     }
     
+    // MARK: Keyboard
     
 }
 
 extension LoginViewController {
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
     func addKeyboardDismissRecognizer() {
-        self.view.addGestureRecognizer(tapRecognizer!)
+        view.addGestureRecognizer(tapRecognizer!)
     }
     
     func removeKeyboardDismissRecognizer() {
-        self.view.removeGestureRecognizer(tapRecognizer!)
+        view.removeGestureRecognizer(tapRecognizer!)
     }
     
     func handleSingleTap(recognizer: UITapGestureRecognizer) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     func subscribeToKeyboardNotifications() {
@@ -145,13 +159,15 @@ extension LoginViewController {
     
     func unsubscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func keyboardWillShow(notification: NSNotification) {
         
         if keyboardAdjusted == false {
             lastKeyboardOffset = getKeyboardHeight(notification) / 2
-            self.view.superview?.frame.origin.y -= lastKeyboardOffset
+            view.superview?.frame.origin.y -= lastKeyboardOffset
+            
             keyboardAdjusted = true
         }
     }
@@ -159,7 +175,8 @@ extension LoginViewController {
     func keyboardWillHide(notification: NSNotification) {
         
         if keyboardAdjusted == true {
-            self.view.superview?.frame.origin.y += lastKeyboardOffset
+            view.superview?.frame.origin.y += lastKeyboardOffset
+            
             keyboardAdjusted = false
         }
     }

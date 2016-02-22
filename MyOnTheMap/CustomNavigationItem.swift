@@ -20,16 +20,16 @@ class CustomNavigationItem: UINavigationItem {
         
         UdacityClient.sharedInstance().getStudentLocations { (result, error) -> Void in
             if let results = result {
-                
+                print("got results")
                 self.appDelegate.allStudentInfo = results
-                
+                completionHandler(success: true, errorString: nil)
             } else {
-                print(error)
+                completionHandler(success: false, errorString: "Could not get student info")
             }
             
         }
         
-        completionHandler(success: true, errorString: "Failed to get student Locations")
+        
         
     }
     

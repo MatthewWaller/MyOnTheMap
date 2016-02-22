@@ -24,20 +24,30 @@ class MapViewController: UIViewController {
         
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        getStudents()
+        getInfo(self)
+        
+    }
+    func presentAlert(alertText: String){
+        
+        let loginFailureAlert = UIAlertController(title: "Error", message: alertText, preferredStyle: .Alert)
+        
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+        
+        loginFailureAlert.addAction(dismissAction)
+        
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            self.presentViewController(loginFailureAlert, animated: true, completion: nil)
+        }
         
     }
     
  
     func getStudents() {
         
-                
                 self.students = self.appDelegate.allStudentInfo!
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.addPins()
                 })
-           
-
         
     }
     
@@ -87,23 +97,22 @@ class MapViewController: UIViewController {
     func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if control == annotationView.rightCalloutAccessoryView {
-            let app = UIApplication.sharedApplication()
-            app.openURL(NSURL(string: annotationView.annotation!.subtitle!!)!)
+            UIApplication.sharedApplication().openURL(NSURL(string: annotationView.annotation!.subtitle!!)!)
         }
     }
     
     //MARK: Navigation bar
     
-    @IBAction func getInfo(sender: UIBarButtonItem) {
+    @IBAction func getInfo(sender: AnyObject) {
         
         customNavBar.refresh { (success, errorString) -> Void in
             if success {
                 
-                 self.getStudents()
+                self.getStudents()
                 
             } else {
                 
-                print("refreshFailed")
+                self.presentAlert(errorString!)
             }
         }
         

@@ -183,7 +183,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="x3L-xf-g9G">
                                 <connections>
-                                    <action selector="getInfo:" destination="Wuu-oY-JJw" id="gR0-Qz-T3O"/>
+                                    <action selector="getInfo:" destination="Wuu-oY-JJw" id="xuM-k2-OcQ"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="Pin" id="bjV-Oj-w5Z">
@@ -231,43 +231,49 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your location here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhn-A3-TD1">
-                                <rect key="frame" x="20" y="79" width="280" height="30"/>
+                                <rect key="frame" x="20" y="79" width="168" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cfg-wR-Qtd">
-                                <rect key="frame" x="0.0" y="117" width="320" height="317"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="363"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6C-6u-0Wg">
-                                <rect key="frame" x="133" y="442" width="54" height="30"/>
+                                <rect key="frame" x="196" y="79" width="54" height="30"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <state key="normal" title="Find Me"/>
                                 <connections>
                                     <action selector="submitInfo:" destination="BeI-2T-F9F" eventType="touchUpInside" id="mr5-LZ-7IC"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fSB-CK-8Jg">
+                                <rect key="frame" x="258" y="84" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fiy-Sk-19W" firstAttribute="top" secondItem="Ju4-pH-KVT" secondAttribute="bottom" constant="24" id="1FT-cc-AXU"/>
-                            <constraint firstAttribute="trailing" secondItem="bhn-A3-TD1" secondAttribute="trailing" constant="20" id="4Yh-oF-xlf"/>
+                            <constraint firstItem="rXc-KE-679" firstAttribute="top" secondItem="cfg-wR-Qtd" secondAttribute="bottom" id="2Oq-WG-lVh"/>
                             <constraint firstItem="fiy-Sk-19W" firstAttribute="leading" secondItem="pDb-4u-HPj" secondAttribute="leading" constant="20" id="58Z-um-6g4"/>
-                            <constraint firstItem="p6C-6u-0Wg" firstAttribute="centerX" secondItem="pDb-4u-HPj" secondAttribute="centerX" id="Cxq-Ov-lzw"/>
                             <constraint firstAttribute="trailing" secondItem="cfg-wR-Qtd" secondAttribute="trailing" id="ScW-Td-W36"/>
-                            <constraint firstItem="p6C-6u-0Wg" firstAttribute="top" secondItem="cfg-wR-Qtd" secondAttribute="bottom" constant="8" id="bzM-0R-iMi"/>
+                            <constraint firstItem="p6C-6u-0Wg" firstAttribute="leading" secondItem="bhn-A3-TD1" secondAttribute="trailing" constant="8" id="XLw-ss-6h1"/>
+                            <constraint firstItem="fSB-CK-8Jg" firstAttribute="centerY" secondItem="p6C-6u-0Wg" secondAttribute="centerY" id="Yxk-9R-5mZ"/>
+                            <constraint firstItem="p6C-6u-0Wg" firstAttribute="centerY" secondItem="bhn-A3-TD1" secondAttribute="centerY" id="blk-06-J3g"/>
                             <constraint firstItem="cfg-wR-Qtd" firstAttribute="leading" secondItem="pDb-4u-HPj" secondAttribute="leading" id="dUi-3K-F0g"/>
                             <constraint firstAttribute="trailing" secondItem="fiy-Sk-19W" secondAttribute="trailing" constant="20" id="eH9-Bd-77N"/>
                             <constraint firstItem="i98-eY-x99" firstAttribute="top" secondItem="Ju4-pH-KVT" secondAttribute="bottom" id="fek-Ka-baH"/>
                             <constraint firstItem="cfg-wR-Qtd" firstAttribute="top" secondItem="bhn-A3-TD1" secondAttribute="bottom" constant="8" id="j97-Yo-tOq"/>
-                            <constraint firstItem="rXc-KE-679" firstAttribute="top" secondItem="p6C-6u-0Wg" secondAttribute="bottom" constant="8" id="kVw-nM-T7t"/>
                             <constraint firstItem="bhn-A3-TD1" firstAttribute="top" secondItem="fiy-Sk-19W" secondAttribute="bottom" constant="8" id="noj-K9-G7C"/>
                             <constraint firstAttribute="trailing" secondItem="i98-eY-x99" secondAttribute="trailing" constant="20" id="tGp-RB-NaW"/>
+                            <constraint firstItem="fSB-CK-8Jg" firstAttribute="leading" secondItem="p6C-6u-0Wg" secondAttribute="trailing" constant="8" id="x7d-UV-V4T"/>
                             <constraint firstItem="bhn-A3-TD1" firstAttribute="leading" secondItem="pDb-4u-HPj" secondAttribute="leading" constant="20" id="zf9-rs-aeo"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="fSB-CK-8Jg" id="4F5-6K-7L1"/>
                         <outlet property="instructionLabel" destination="fiy-Sk-19W" id="fxN-sj-kru"/>
+                        <outlet property="mapView" destination="cfg-wR-Qtd" id="Ds1-8c-n8Y"/>
                         <outlet property="submissionButton" destination="p6C-6u-0Wg" id="qFa-sy-l9k"/>
                         <outlet property="textField" destination="bhn-A3-TD1" id="noF-Re-np2"/>
                     </connections>
@@ -337,7 +343,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="7et-0D-Csc">
                                 <connections>
-                                    <action selector="getInfo:" destination="BWe-wL-RXA" id="IMN-S1-1W1"/>
+                                    <action selector="getInfo:" destination="BWe-wL-RXA" id="a44-VF-ZF3"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="Pin" id="mRB-dx-HCv">

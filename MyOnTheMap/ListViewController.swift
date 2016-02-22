@@ -22,13 +22,41 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LoadedListView")
+
+        getInfo(self)
         
-        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        customNavBar.refresh { (success, errorString) -> Void in
+//            if success {
+//                
+//                self.appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//                
+//                if let students = self.appDelegate.allStudentInfo {
+//                    self.students = students
+//                }
+//                
+//                self.tableView.reloadData()
+//                
+//            } else {
+//                
+//                self.presentAlert(errorString!)
+//            }
+//        }
         
-        if let students = appDelegate.allStudentInfo {
-            self.students = students
+        
+    }
+    
+    func presentAlert(alertText: String){
+        
+        let loginFailureAlert = UIAlertController(title: "Login Failure", message: alertText, preferredStyle: .Alert)
+        
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .Cancel, handler: nil)
+        
+        loginFailureAlert.addAction(dismissAction)
+        
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            self.presentViewController(loginFailureAlert, animated: true, completion: nil)
         }
+        
     }
     
     
@@ -61,16 +89,23 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     //MARK: Navigation bar
     
-    @IBAction func getInfo(sender: UIBarButtonItem) {
+    @IBAction func getInfo(sender: AnyObject) {
         
         customNavBar.refresh { (success, errorString) -> Void in
             if success {
                 
-                self.tableView.reloadData()
+                self.appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                if let students = self.appDelegate.allStudentInfo {
+                    self.students = students
+                }
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
                 
             } else {
                 
-                print("refreshFailed")
+                self.presentAlert(errorString!)
             }
         }
     }

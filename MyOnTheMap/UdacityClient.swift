@@ -52,7 +52,7 @@ class UdacityClient : NSObject {
             
             /* GUARD: Was there an error? */
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
+                completionHandler(result: nil, error: error)
                 return
             }
             
@@ -161,7 +161,6 @@ class UdacityClient : NSObject {
          let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             guard (error == nil) else {
-                print("There was an error with your request: \(error!.localizedDescription)")
                 completionHandler(result: nil, error: error)
                 return
             }
