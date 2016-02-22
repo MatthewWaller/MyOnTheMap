@@ -125,21 +125,21 @@ extension UdacityClient {
     
     func getStudentLocations (completionHandler: (result: [StudentInformation]?, error: NSError?) -> Void) {
         
-        let parameters = [UdacityClient.ParameterKeys.Limit : 100]
+        let parameters = [ParameterKeys.Limit : 100]
         
         let requestValues = [
-            ["value":UdacityClient.Constants.ParseApplicationID, "forHTTPHeaderField":"X-Parse-Application-Id"],
-            ["value":UdacityClient.Constants.ParseRestApiKey, "forHTTPHeaderField":"X-Parse-REST-API-Key"]
+            ["value":Constants.ParseApplicationID, "forHTTPHeaderField":"X-Parse-Application-Id"],
+            ["value":Constants.ParseRestApiKey, "forHTTPHeaderField":"X-Parse-REST-API-Key"]
         ]
         
-        taskForGETMethod(UdacityClient.Methods.StudentLocation, parameters: parameters, baseURLString: Constants.BaseParseURLSecure, requestValues: requestValues) { (result, error) -> Void in
+        taskForGETMethod(Methods.StudentLocation, parameters: parameters, baseURLString: Constants.BaseParseURLSecure, requestValues: requestValues) { (result, error) -> Void in
             if let error = error {
                 
                 completionHandler(result: nil, error: error)
             } else {
 
                 
-                if let results = result[UdacityClient.JSONResponseKeys.StudentInfoResults] as? [[String:AnyObject]] {
+                if let results = result[JSONResponseKeys.StudentInfoResults] as? [[String:AnyObject]] {
                    
                     let studentInfo = StudentInformation.studentInformationObjectsFromResults(results)
                     completionHandler(result: studentInfo, error: nil)
@@ -155,8 +155,8 @@ extension UdacityClient {
         
         let parameters = [String: AnyObject]()
         let requestValues = [
-            ["value":UdacityClient.Constants.ParseApplicationID, "forHTTPHeaderField":"X-Parse-Application-Id"],
-            ["value":UdacityClient.Constants.ParseRestApiKey, "forHTTPHeaderField":"X-Parse-REST-API-Key"],
+            ["value":Constants.ParseApplicationID, "forHTTPHeaderField":"X-Parse-Application-Id"],
+            ["value":Constants.ParseRestApiKey, "forHTTPHeaderField":"X-Parse-REST-API-Key"],
             ["value":"application/json", "forHTTPHeaderField":"Content-Type"]
         ]
         let jsonBody : [String:AnyObject] = [
@@ -185,7 +185,7 @@ extension UdacityClient {
     func refresh(completionHandler: (success: Bool, errorString: String?) -> Void) {
         
         
-        UdacityClient.sharedInstance().getStudentLocations { (result, error) -> Void in
+        getStudentLocations { (result, error) -> Void in
             if let results = result {
                
                 self.appDelegate.allStudentInfo = results
@@ -214,7 +214,7 @@ extension UdacityClient {
                 
                 
             } else {
-                UdacityClient.sharedInstance().logOutOfUdacity({ (success, errorString) -> Void in
+                logOutOfUdacity({ (success, errorString) -> Void in
                     if let _ = errorString {
                         
                     } else {
@@ -231,7 +231,7 @@ extension UdacityClient {
     
     func logOutOfUdacity(completionHandler:(success: Bool, errorString: String?) -> Void) {
         
-        taskForDELETEMethod(UdacityClient.Methods.Session, baseURLString: Constants.BaseURLSecure) { (result, error) -> Void in
+        taskForDELETEMethod(Methods.Session, baseURLString: Constants.BaseURLSecure) { (result, error) -> Void in
             if let error = error {
                 completionHandler(success: false, errorString: error.localizedDescription)
             } else {

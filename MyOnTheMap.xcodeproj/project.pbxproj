@@ -130,8 +130,8 @@
 			children = (
 				DAC6F81D1C738FF80042934D /* Frameworks */,
 				DAC6F8141C7247080042934D /* Model */,
-				DAC6F7E11C723D030042934D /* Main.storyboard */,
 				DAC6F8341C7BA9310042934D /* Controllers */,
+				DAC6F7E11C723D030042934D /* Main.storyboard */,
 				DAC6F7DD1C723D030042934D /* AppDelegate.swift */,
 				DAC6F7E71C723D030042934D /* Assets.xcassets */,
 				DAC6F7E91C723D030042934D /* LaunchScreen.storyboard */,

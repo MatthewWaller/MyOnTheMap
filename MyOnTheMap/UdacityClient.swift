@@ -31,10 +31,8 @@ class UdacityClient : NSObject {
     
     func taskForGETMethod(method: String, parameters: [String : AnyObject], baseURLString: String, requestValues: [[String: String]]?, completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
-        /* 1. Set the parameters */
         let mutableParameters = parameters
         
-        /* 2/3. Build the URL and configure the request */
         let urlString = baseURLString + method + UdacityClient.escapedParameters(mutableParameters)
         let url = NSURL(string: urlString)!
         let request = NSMutableURLRequest(URL: url)
@@ -49,16 +47,13 @@ class UdacityClient : NSObject {
             
         }
         
-        /* 4. Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
-            /* GUARD: Was there an error? */
             guard (error == nil) else {
                 completionHandler(result: nil, error: error)
                 return
             }
-            
-            /* GUARD: Was there any data returned? */
+
             guard let data = data else {
                 
                 return
@@ -86,11 +81,9 @@ class UdacityClient : NSObject {
     
     func taskForPOSTMethod(method: String, parameters: [String : AnyObject], baseURLString: String, requestValues: [[String: String]]?, jsonBody: [String:AnyObject], completionHandler: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         
-        /* 1. Set the parameters */
         let mutableParameters = parameters
         
-        
-        /* 2/3. Build the URL and configure the request */
+
         let urlString = baseURLString + method + UdacityClient.escapedParameters(mutableParameters)
         let url = NSURL(string: urlString)!
         let request = NSMutableURLRequest(URL: url)
@@ -110,7 +103,6 @@ class UdacityClient : NSObject {
             request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(jsonBody, options: .PrettyPrinted)
         }
         
-        /* 4. Make the request */
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             guard (error == nil) else {
