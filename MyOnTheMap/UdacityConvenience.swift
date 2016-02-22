@@ -92,7 +92,7 @@ extension UdacityClient {
         mutableMethod = UdacityClient.subtituteKeyInMethod(mutableMethod, key: UdacityClient.URLKeys.UserID, value: String(UdacityClient.sharedInstance().userID!))!
         
         taskForGETMethod(mutableMethod, parameters: parameters, baseURLString: Constants.BaseURLSecure, requestValues: nil) { (result, error) -> Void in
-            if let error = error {
+            if let _ = error {
                 
                 completionHandler(success: false, firstName: nil, lastName: nil, errorString: "Login Failed (UserInfo).")
             } else {
@@ -215,7 +215,7 @@ extension UdacityClient {
                 
             } else {
                 UdacityClient.sharedInstance().logOutOfUdacity({ (success, errorString) -> Void in
-                    if let errorMessage = errorString {
+                    if let _ = errorString {
                         
                     } else {
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
