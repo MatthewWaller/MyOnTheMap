@@ -39,8 +39,6 @@ class InfoPostViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         activityIndicator.stopAnimating()
         
-        print(UdacityClient.sharedInstance().userFirstName)
-        
         myLocationInfo = ["firstName": UdacityClient.sharedInstance().userFirstName!,
             "lastName": UdacityClient.sharedInstance().userLastName!,
             "uniqueKey": UdacityClient.sharedInstance().userID!]

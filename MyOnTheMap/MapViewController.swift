@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     var appDelegate: AppDelegate!
     var students: [StudentInformation] = [StudentInformation]()
     
-    @IBOutlet weak var customNavBar: CustomNavigationItem!
+
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -104,25 +104,26 @@ class MapViewController: UIViewController {
     //MARK: Navigation bar
     
     @IBAction func getInfo(sender: AnyObject) {
-        
-        customNavBar.refresh { (success, errorString) -> Void in
+
+        UdacityClient.sharedInstance().refresh { (success, errorString) -> Void in
             if success {
                 
                 self.getStudents()
                 
             } else {
                 
-                self.presentAlert(errorString!)
+            self.presentAlert(errorString!)
             }
         }
         
+ 
         
     }
     
     
     @IBAction func logout(sender: UIBarButtonItem) {
         
-        customNavBar.logout(self)
+        UdacityClient.sharedInstance().logout(self)
         
     }
     

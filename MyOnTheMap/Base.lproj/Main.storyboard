@@ -174,7 +174,7 @@
                             <constraint firstAttribute="trailing" secondItem="u1K-lx-Z0l" secondAttribute="trailing" id="ovj-Km-XEg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="On The Map" id="4JV-kA-YnX" customClass="CustomNavigationItem" customModule="MyOnTheMap" customModuleProvider="target">
+                    <navigationItem key="navigationItem" title="On The Map" id="4JV-kA-YnX">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="q6C-5D-wRP">
                             <connections>
                                 <action selector="logout:" destination="Wuu-oY-JJw" id="4fJ-j6-k6s"/>
@@ -195,9 +195,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="customNavBar" destination="4JV-kA-YnX" id="vYq-ks-j5s"/>
                         <outlet property="mapView" destination="u1K-lx-Z0l" id="1ec-Uk-eb5"/>
-                        <outlet property="navigationItem" destination="4JV-kA-YnX" id="Tlc-nz-O9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enZ-Ad-yfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,7 +332,7 @@
                             <constraint firstItem="w5u-ZS-gVF" firstAttribute="top" secondItem="4Bz-vC-Ncg" secondAttribute="bottom" id="ynT-rG-3TW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="On The Map" id="b1Y-XN-M4h" customClass="CustomNavigationItem" customModule="MyOnTheMap" customModuleProvider="target">
+                    <navigationItem key="navigationItem" title="On The Map" id="b1Y-XN-M4h">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="iuP-6y-gIz">
                             <connections>
                                 <action selector="logout:" destination="BWe-wL-RXA" id="dHj-bp-VNb"/>
@@ -356,7 +354,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="customNavBar" destination="b1Y-XN-M4h" id="hdF-9m-yPL"/>
                         <outlet property="tableView" destination="4Bz-vC-Ncg" id="bME-PG-cYM"/>
                     </connections>
                 </viewController>

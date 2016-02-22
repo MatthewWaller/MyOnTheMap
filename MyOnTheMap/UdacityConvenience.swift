@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FBSDKLoginKit
 
 extension UdacityClient {
     
@@ -20,11 +21,10 @@ extension UdacityClient {
                 
                 self.sessionID = sessionID
                 self.userID = userID
-                print("got user and session ID!!")
                 
                 self.getPublicUserData({ (success, firstName, lastName, errorString) -> Void in
                     if success {
-                        print("\(firstName) \(lastName)")
+                        
                         self.userFirstName = firstName
                         self.userLastName = lastName
                         completionHandler(success: success, errorString: errorString)
@@ -57,12 +57,11 @@ extension UdacityClient {
         taskForPOSTMethod(mutableMethod, parameters: parameters, baseURLString: Constants.BaseURLSecure, requestValues: requestValues, jsonBody: jsonBody) { JSONResult, error in
         
             if let error = error {
-                print(error)
+              
                 completionHandler(success: false, sessionID: nil, userID: nil, errorString: error.localizedDescription)
             } else {
                 
                 if let errorMessage = JSONResult["error"] as? String { //the error is nil, but the database can still return a readable JSON error
-                    print(errorMessage)
                     completionHandler(success: false, sessionID: nil, userID: nil, errorString: errorMessage)
                 } else {
                 
@@ -92,11 +91,9 @@ extension UdacityClient {
         var mutableMethod : String = Methods.User
         mutableMethod = UdacityClient.subtituteKeyInMethod(mutableMethod, key: UdacityClient.URLKeys.UserID, value: String(UdacityClient.sharedInstance().userID!))!
         
-        print("this is the userID: \(UdacityClient.sharedInstance().userID!)")
-        
         taskForGETMethod(mutableMethod, parameters: parameters, baseURLString: Constants.BaseURLSecure, requestValues: nil) { (result, error) -> Void in
             if let error = error {
-                print(error)
+                
                 completionHandler(success: false, firstName: nil, lastName: nil, errorString: "Login Failed (UserInfo).")
             } else {
                 
@@ -137,11 +134,10 @@ extension UdacityClient {
         
         taskForGETMethod(UdacityClient.Methods.StudentLocation, parameters: parameters, baseURLString: Constants.BaseParseURLSecure, requestValues: requestValues) { (result, error) -> Void in
             if let error = error {
-                print("error here")
+                
                 completionHandler(result: nil, error: error)
             } else {
-                
-                print("got a result")
+
                 
                 if let results = result[UdacityClient.JSONResponseKeys.StudentInfoResults] as? [[String:AnyObject]] {
                    
@@ -184,6 +180,54 @@ extension UdacityClient {
         
         
     }
+    
+    
+    func refresh(completionHandler: (success: Bool, errorString: String?) -> Void) {
+        
+        
+        UdacityClient.sharedInstance().getStudentLocations { (result, error) -> Void in
+            if let results = result {
+               
+                self.appDelegate.allStudentInfo = results
+                completionHandler(success: true, errorString: nil)
+            } else {
+                completionHandler(success: false, errorString: "Could not get student info")
+            }
+            
+        }
+        
+        
+        
+    }
+    
+    func logout(viewController: UIViewController){
+        
+            
+            if (FBSDKAccessToken.currentAccessToken() != nil) {
+                
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut()
+               
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    viewController.dismissViewControllerAnimated(true, completion: nil)
+                })
+                
+                
+            } else {
+                UdacityClient.sharedInstance().logOutOfUdacity({ (success, errorString) -> Void in
+                    if let errorMessage = errorString {
+                        
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            viewController.dismissViewControllerAnimated(true, completion: nil)
+                        })
+                    }
+                })
+            }
+        
+    }
+
+    
     
     func logOutOfUdacity(completionHandler:(success: Bool, errorString: String?) -> Void) {
         

@@ -24,7 +24,6 @@
 		DAC6F8251C73C2510042934D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8241C73C2510042934D /* MapViewController.swift */; };
 		DAC6F8271C73C2990042934D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8261C73C2990042934D /* ListViewController.swift */; };
 		DAC6F8291C73D63C0042934D /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8281C73D63C0042934D /* StudentInformation.swift */; };
-		DAC6F82B1C74F2990042934D /* CustomNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F82A1C74F2990042934D /* CustomNavigationItem.swift */; };
 		DAC6F82D1C75327D0042934D /* InfoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */; };
 		DAC6F82F1C7621A70042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */; };
 		DAC6F8311C7621B60042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */; };
@@ -72,7 +71,6 @@
 		DAC6F8241C73C2510042934D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DAC6F8261C73C2990042934D /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DAC6F8281C73D63C0042934D /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
-		DAC6F82A1C74F2990042934D /* CustomNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationItem.swift; sourceTree = "<group>"; };
 		DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostViewController.swift; sourceTree = "<group>"; };
 		DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -133,12 +131,8 @@
 				DAC6F81D1C738FF80042934D /* Frameworks */,
 				DAC6F8141C7247080042934D /* Model */,
 				DAC6F7E11C723D030042934D /* Main.storyboard */,
-				DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */,
+				DAC6F8341C7BA9310042934D /* Controllers */,
 				DAC6F7DD1C723D030042934D /* AppDelegate.swift */,
-				DAC6F7DF1C723D030042934D /* LoginViewController.swift */,
-				DAC6F82A1C74F2990042934D /* CustomNavigationItem.swift */,
-				DAC6F8241C73C2510042934D /* MapViewController.swift */,
-				DAC6F8261C73C2990042934D /* ListViewController.swift */,
 				DAC6F7E71C723D030042934D /* Assets.xcassets */,
 				DAC6F7E91C723D030042934D /* LaunchScreen.storyboard */,
 				DAC6F7EC1C723D030042934D /* Info.plist */,
@@ -203,6 +197,17 @@
 				DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAC6F8341C7BA9310042934D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DAC6F8261C73C2990042934D /* ListViewController.swift */,
+				DAC6F8241C73C2510042934D /* MapViewController.swift */,
+				DAC6F7DF1C723D030042934D /* LoginViewController.swift */,
+				DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,7 +354,6 @@
 				DAC6F8271C73C2990042934D /* ListViewController.swift in Sources */,
 				DAC6F82D1C75327D0042934D /* InfoPostViewController.swift in Sources */,
 				DAC6F8251C73C2510042934D /* MapViewController.swift in Sources */,
-				DAC6F82B1C74F2990042934D /* CustomNavigationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

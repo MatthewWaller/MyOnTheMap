@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import FBSDKLoginKit
 
 // MARK: - UdacityClient: NSObject
 
@@ -18,6 +20,7 @@ class UdacityClient : NSObject {
     var userID: String? = nil
     var userFirstName: String? = nil
     var userLastName: String? = nil
+    var appDelegate: AppDelegate! = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override init() {
         session = NSURLSession.sharedSession()
@@ -34,7 +37,6 @@ class UdacityClient : NSObject {
         /* 2/3. Build the URL and configure the request */
         let urlString = baseURLString + method + UdacityClient.escapedParameters(mutableParameters)
         let url = NSURL(string: urlString)!
-        print("this is the url path \(url.path)")
         let request = NSMutableURLRequest(URL: url)
         
         if let valuesToBeAdded = requestValues {
@@ -58,7 +60,7 @@ class UdacityClient : NSObject {
             
             /* GUARD: Was there any data returned? */
             guard let data = data else {
-                print("No data was returned by the request!")
+                
                 return
             }
             
@@ -112,13 +114,12 @@ class UdacityClient : NSObject {
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             
             guard (error == nil) else {
-                print("There was an error with your request: \(error!.localizedDescription)")
                 completionHandler(result: nil, error: error)
                 return
             }
             
             guard let data = data else {
-                print("No data was returned by the request!")
+               
                 return
             }
             
@@ -166,7 +167,7 @@ class UdacityClient : NSObject {
             }
             
             guard let data = data else {
-                print("No data was returned by the request!")
+               
                 return
             }
             

@@ -16,7 +16,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var appDelegate: AppDelegate!
     var students: [StudentInformation] = [StudentInformation]()
     
-    @IBOutlet weak var customNavBar: CustomNavigationItem!
+
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,24 +24,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         getInfo(self)
-        
-//        customNavBar.refresh { (success, errorString) -> Void in
-//            if success {
-//                
-//                self.appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                
-//                if let students = self.appDelegate.allStudentInfo {
-//                    self.students = students
-//                }
-//                
-//                self.tableView.reloadData()
-//                
-//            } else {
-//                
-//                self.presentAlert(errorString!)
-//            }
-//        }
-        
         
     }
     
@@ -91,7 +73,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func getInfo(sender: AnyObject) {
         
-        customNavBar.refresh { (success, errorString) -> Void in
+        UdacityClient.sharedInstance().refresh { (success, errorString) -> Void in
             if success {
                 
                 self.appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -112,7 +94,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func logout(sender: UIBarButtonItem) {
         
-        customNavBar.logout(self)
+        UdacityClient.sharedInstance().logout(self)
         
     }
 }
