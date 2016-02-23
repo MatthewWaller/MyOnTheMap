@@ -75,9 +75,9 @@
 		DAC6F8261C73C2990042934D /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DAC6F8281C73D63C0042934D /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostViewController.swift; sourceTree = "<group>"; };
-		DAC6F8381C7CB3240042934D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		DAC6F83A1C7CB32E0042934D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		DAC6F83C1C7CB3360042934D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		DAC6F8381C7CB3240042934D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = /Users/matthewwaller/Desktop/UdacityCourseWork/MyOnTheMap/MyOnTheMap/FBSDKCoreKit.framework; sourceTree = "<absolute>"; };
+		DAC6F83A1C7CB32E0042934D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = /Users/matthewwaller/Desktop/UdacityCourseWork/MyOnTheMap/MyOnTheMap/Bolts.framework; sourceTree = "<absolute>"; };
+		DAC6F83C1C7CB3360042934D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = /Users/matthewwaller/Desktop/UdacityCourseWork/MyOnTheMap/MyOnTheMap/FBSDKLoginKit.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
