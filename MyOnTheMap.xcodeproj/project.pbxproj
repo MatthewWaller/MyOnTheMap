@@ -25,12 +25,12 @@
 		DAC6F8271C73C2990042934D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8261C73C2990042934D /* ListViewController.swift */; };
 		DAC6F8291C73D63C0042934D /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F8281C73D63C0042934D /* StudentInformation.swift */; };
 		DAC6F82D1C75327D0042934D /* InfoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */; };
-		DAC6F8391C7CB3240042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8381C7CB3240042934D /* FBSDKCoreKit.framework */; };
-		DAC6F83B1C7CB32E0042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F83A1C7CB32E0042934D /* Bolts.framework */; };
-		DAC6F83D1C7CB3360042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F83C1C7CB3360042934D /* FBSDKLoginKit.framework */; };
-		DAC6F83E1C7CB33B0042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F83C1C7CB3360042934D /* FBSDKLoginKit.framework */; };
-		DAC6F83F1C7CB33D0042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F83A1C7CB32E0042934D /* Bolts.framework */; };
-		DAC6F8401C7CB33E0042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8381C7CB3240042934D /* FBSDKCoreKit.framework */; };
+		DAC6F84D1C7CB66B0042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F84A1C7CB66B0042934D /* Bolts.framework */; };
+		DAC6F84E1C7CB66B0042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F84B1C7CB66B0042934D /* FBSDKCoreKit.framework */; };
+		DAC6F84F1C7CB66B0042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F84C1C7CB66B0042934D /* FBSDKLoginKit.framework */; };
+		DAC6F8501C7CB66D0042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F84A1C7CB66B0042934D /* Bolts.framework */; };
+		DAC6F8511C7CB66F0042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F84B1C7CB66B0042934D /* FBSDKCoreKit.framework */; };
+		DAC6F8521C7CB6700042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F84C1C7CB66B0042934D /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,9 +75,9 @@
 		DAC6F8261C73C2990042934D /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DAC6F8281C73D63C0042934D /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 		DAC6F82C1C75327D0042934D /* InfoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostViewController.swift; sourceTree = "<group>"; };
-		DAC6F8381C7CB3240042934D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = /Users/matthewwaller/Desktop/UdacityCourseWork/MyOnTheMap/MyOnTheMap/FBSDKCoreKit.framework; sourceTree = "<absolute>"; };
-		DAC6F83A1C7CB32E0042934D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = /Users/matthewwaller/Desktop/UdacityCourseWork/MyOnTheMap/MyOnTheMap/Bolts.framework; sourceTree = "<absolute>"; };
-		DAC6F83C1C7CB3360042934D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = /Users/matthewwaller/Desktop/UdacityCourseWork/MyOnTheMap/MyOnTheMap/FBSDKLoginKit.framework; sourceTree = "<absolute>"; };
+		DAC6F84A1C7CB66B0042934D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		DAC6F84B1C7CB66B0042934D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		DAC6F84C1C7CB66B0042934D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC6F8391C7CB3240042934D /* FBSDKCoreKit.framework in Frameworks */,
-				DAC6F83B1C7CB32E0042934D /* Bolts.framework in Frameworks */,
-				DAC6F83D1C7CB3360042934D /* FBSDKLoginKit.framework in Frameworks */,
+				DAC6F84D1C7CB66B0042934D /* Bolts.framework in Frameworks */,
+				DAC6F84E1C7CB66B0042934D /* FBSDKCoreKit.framework in Frameworks */,
+				DAC6F84F1C7CB66B0042934D /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC6F83E1C7CB33B0042934D /* FBSDKLoginKit.framework in Frameworks */,
-				DAC6F83F1C7CB33D0042934D /* Bolts.framework in Frameworks */,
-				DAC6F8401C7CB33E0042934D /* FBSDKCoreKit.framework in Frameworks */,
+				DAC6F8501C7CB66D0042934D /* Bolts.framework in Frameworks */,
+				DAC6F8511C7CB66F0042934D /* FBSDKCoreKit.framework in Frameworks */,
+				DAC6F8521C7CB6700042934D /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +145,9 @@
 				DAC6F80E1C723EF90042934D /* Roboto-Medium.ttf */,
 				DAC6F80F1C723EF90042934D /* Roboto-Regular.ttf */,
 				DAC6F8101C723EF90042934D /* Roboto-Thin.ttf */,
-				DAC6F83C1C7CB3360042934D /* FBSDKLoginKit.framework */,
-				DAC6F83A1C7CB32E0042934D /* Bolts.framework */,
-				DAC6F8381C7CB3240042934D /* FBSDKCoreKit.framework */,
+				DAC6F84A1C7CB66B0042934D /* Bolts.framework */,
+				DAC6F84B1C7CB66B0042934D /* FBSDKCoreKit.framework */,
+				DAC6F84C1C7CB66B0042934D /* FBSDKLoginKit.framework */,
 			);
 			path = MyOnTheMap;
 			sourceTree = "<group>";
