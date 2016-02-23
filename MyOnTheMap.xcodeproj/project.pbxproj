@@ -28,6 +28,9 @@
 		DAC6F82F1C7621A70042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */; };
 		DAC6F8311C7621B60042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */; };
 		DAC6F8331C7621D60042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8321C7621D60042934D /* Bolts.framework */; };
+		DAC6F8351C7CAF8E0042934D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8321C7621D60042934D /* Bolts.framework */; };
+		DAC6F8361C7CAF900042934D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F8301C7621B60042934D /* FBSDKLoginKit.framework */; };
+		DAC6F8371C7CAF920042934D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC6F82E1C7621A70042934D /* FBSDKCoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC6F8351C7CAF8E0042934D /* Bolts.framework in Frameworks */,
+				DAC6F8361C7CAF900042934D /* FBSDKLoginKit.framework in Frameworks */,
+				DAC6F8371C7CAF920042934D /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +547,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyOnTheMap",
+				);
 				INFOPLIST_FILE = MyOnTheMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MWaller.MyOnTheMapUITests;
@@ -554,6 +564,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyOnTheMap",
+				);
 				INFOPLIST_FILE = MyOnTheMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MWaller.MyOnTheMapUITests;
